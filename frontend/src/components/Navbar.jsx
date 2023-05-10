@@ -3,6 +3,8 @@ import {Link, useNavigate} from 'react-router-dom';
 
 import { navlinks } from '../consts';
 import { siteLogo, searchIcon } from '../assets';
+import { useStateContext } from '../context';
+
 
 import {DetailedButton} from './';
 
@@ -15,8 +17,7 @@ const Tab = ({styles, title, handleClick}) =>
 
 const Navbar = () => {
   const navigate = useNavigate();
-
-  const address = '0x***'
+  const { connect, address } = useStateContext();
 
   return (
     <div className="bg-gray-900 w-screen py-4 items-center justify-center flex flex-row">
@@ -50,7 +51,7 @@ const Navbar = () => {
           }
           else
           {
-            //connect();
+            connect();
           }
         }} styles={"justify-self-end"}></DetailedButton>
       </div>
