@@ -55,7 +55,7 @@ export const StateContextProvider = ({ children }) => {
     }
 
     const getDonations = async (pId) => {
-        const donations = await contract.call('getDonors', [pId]);
+        const donations = await contract.call('getDonators', [pId]);
         const numberOfDonations = donations[0].length;
 
         const parsedDonations = [];
