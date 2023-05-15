@@ -25,7 +25,7 @@
         },
         {
           "functionSelector": "0x0fa91fa9",
-          "functionSignature": "getDonators(uint256)"
+          "functionSignature": "getDonors(uint256)"
         },
         {
           "functionSelector": "0x07ca140d",

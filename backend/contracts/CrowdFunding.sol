@@ -10,7 +10,7 @@ contract CrowdFunding {
         uint256 deadline;
         uint256 amountCollected;
         string image;
-        address[] donators;
+        address[] donors;
         uint256[] donations;
     }
 
@@ -55,7 +55,7 @@ contract CrowdFunding {
         // Check if the campaign deadline has passed
         require(block.timestamp < campaign.deadline, "The campaign deadline has passed");
 
-        campaign.donators.push(msg.sender);
+        campaign.donors.push(msg.sender);
         campaign.donations.push(amount);
 
         // Emit the DonationReceived event
@@ -68,10 +68,10 @@ contract CrowdFunding {
         }
     }
 
-    function getDonators(uint256 _campaignId) public view returns(address[] memory, uint256[] memory){
+    function getDonors(uint256 _campaignId) public view returns(address[] memory, uint256[] memory){
         Campaign storage campaign = campaigns[_campaignId];
 
-        return (campaign.donators, campaign.donations);
+        return (campaign.donors, campaign.donations);
     }
 
     function getCampaigns() public view returns(Campaign[] memory){

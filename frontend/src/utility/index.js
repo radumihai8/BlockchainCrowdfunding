@@ -1,6 +1,5 @@
 export const progressPercentage = (current, goal) => {
-    const percentage = Math.round((100 * current) / goal);
-    return percentage;
+    return Math.round((100 * current) / goal);
 };
 
 export const timeLeft = (deadline) => {
